@@ -15,8 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', 'HomeController@Dance'); //->middleware('signed');
-
 Route::get('/blade', function(){
     return View("new");
 });
@@ -25,6 +23,18 @@ Route::get('/login', function() {
     return View("new");
 })->name('login');
 
-Route::get('/login2', function() {
+Route::get('/register', function() {
     return View("new");
 })->name('register');
+
+Route::get('/home', 'HomeController@Dance');
+
+Route::get('/delete', 'UsersController@Delete');
+
+Route::get('/getUsersByEmail', 'UsersController@getUsersByEmail');
+
+Route::get('/sendEmail', 'UsersController@sendEmail');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

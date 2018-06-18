@@ -13,7 +13,7 @@ class InsertIntoUsers extends Seeder
     public function run()
     {
         //inserting into users
-        DB::table("Users")->insert([
+        DB::table("users")->insert([
             ('firstName') => ('Petar'),
             ('lastName') => ('Nikolic'),
             ('email') => ('petar.n@vivifyideas.com'),
@@ -22,7 +22,7 @@ class InsertIntoUsers extends Seeder
             ('password') => ('petar')
         ]);
 
-        DB::table("Users")->insert([
+        DB::table("users")->insert([
             ('firstName') => ('Zika'),
             ('lastName') => ('Zikic'),
             ('email') => ('zika.z@google.com'),
