@@ -60,31 +60,25 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 44);
+/******/ 	return __webpack_require__(__webpack_require__.s = 48);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 44:
+/***/ 48:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(45);
+module.exports = __webpack_require__(49);
 
 
 /***/ }),
 
-/***/ 45:
+/***/ 49:
 /***/ (function(module, exports) {
 
-var b = "var outside of function";
+var myObj = [{ "firstName": "Petar", "lastName": "Petrovic" }, { "firstName": "Milos", "lastName": "Milosevic" }, { "firstName": "Marko", "lastName": "Markovic" }, { "firstName": "Milisav", "lastName": "Milisavljevic" }];
 
-var test = function test(variable) {
-    var variable1 = "var inside function";
-
-    return variable;
-};
-
-console.log(test(b));
+console.log(myObj[0].firstName);
 
 /***/ })
 
