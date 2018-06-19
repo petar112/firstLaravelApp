@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace MyApp\Http\Controllers\Auth;
 
-use App\User;
-use App\Http\Controllers\Controller;
+use MyApp\User;
+use MyApp\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -52,7 +52,7 @@ class RegisterController extends Controller
             'firstName' => 'required|string|max:255',
             'lastName' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'country' => 'required|string|max:255|in:StaticArrays::$countries',
+            'country' => 'required|string|max:255|not_in:StaticArrays::$countries',
             'company' => 'required|string|max:255',
             'password' => 'required|string|min:6|confirmed',
         ]);
@@ -62,7 +62,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return \MyApp\User
      */
     protected function create(array $data)
     {

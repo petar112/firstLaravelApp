@@ -1,9 +1,9 @@
 <?php
 
 
-namespace App\Http\Controllers;
+namespace MyApp\Http\Controllers;
 
-use App\Mail\sendUsersEmails;
+use MyApp\Mail\sendUsersEmails;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Artisan;

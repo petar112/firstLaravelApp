@@ -34,6 +34,10 @@ Route::group(['middleware' => 'auth'], function () {
         return View("new");
     });
 
+    Route::get('/navbar', function(){
+        return View("layouts/header");
+    });
+
     Route::get('/home', 'HomeController@Dance');
 
     Route::get('/delete', 'UsersController@Delete');

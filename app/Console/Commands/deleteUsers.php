@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands;
+namespace MyApp\Console\Commands;
 
 use Illuminate\Console\Command;
 
@@ -38,7 +38,7 @@ class deleteUsers extends Command
     public function handle()
     {
         $users = $this->argument('users');
-        \App\User::destroy($users);
+        \MyApp\User::destroy($users);
             if(empty($users[0])){
                 echo "U gave us no ids!!!";
             }else{
