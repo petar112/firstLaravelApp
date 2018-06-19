@@ -11,18 +11,7 @@
 |
 */
 
-
-
-//Route::get('/login', function() {
-//    return View("new");
-//})->name('login');
-//
-//Route::get('/register', function() {
-//    return View("new");
-//})->name('register');
-
 Auth::routes();
-
 
 Route::group(['middleware' => 'auth'], function () {
 
@@ -38,16 +27,15 @@ Route::group(['middleware' => 'auth'], function () {
         return View("layouts/header");
     });
 
+    Route::get('/jsTest', function (){
+        return View('JSTest');
+    });
+
+
     Route::get('/home', 'HomeController@Dance');
-
     Route::get('/delete', 'UsersController@Delete');
-
     Route::get('/getUsersByEmail', 'UsersController@getUsersByEmail');
-
     Route::get('/sendEmail', 'UsersController@sendEmail');
-
-
     Route::get('/home', 'HomeController@index')->name('home');
-
 });
 

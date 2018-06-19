@@ -1,0 +1,1 @@
+let c = "var in a different js file!";
