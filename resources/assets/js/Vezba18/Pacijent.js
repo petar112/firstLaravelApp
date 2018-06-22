@@ -1,6 +1,6 @@
 import { PersonAbstract } from './PersonCs';
 import { Doctor } from './Doctor';
-import {Logger} from "./Logger";
+import { logger } from "./Logger";
 
 
 export class Pacijent extends PersonAbstract{
@@ -20,8 +20,7 @@ export class Pacijent extends PersonAbstract{
     selectDoctor(doctor){
         if(doctor instanceof Doctor){
             this.doctor = doctor;
-            this.loging = new Logger();
-            this.loging.logg(Date.now(), "Picked: " + this.doctor.getFullName());
+            logger.logg(Date.now(), "Picked: " + this.doctor.getFullName());
             return "Success! You've got yourself a doctor!!";
         }else {
             return "Failed!! That's not a doctor!!";
@@ -33,8 +32,7 @@ export class Pacijent extends PersonAbstract{
     }
 
     log(){
-        this.loging = new Logger();
-        this.loging.logg(Date.now(), this.getFullName());
+        logger.logg(Date.now(), this.getFullName());
     }
 }
 

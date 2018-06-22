@@ -112,16 +112,13 @@ var Doctor = function (_PersonAbstract) {
         value: function scheduleLabCheck(pacient, typeOfCheck) {
             var labCheck = new __WEBPACK_IMPORTED_MODULE_1__LabCheck__["a" /* LabCheck */]("12.12.2012", "15:15", pacient);
             if (typeOfCheck === "BP") {
-                this.loging = new __WEBPACK_IMPORTED_MODULE_2__Logger__["a" /* Logger */]();
-                this.loging.logg(Date.now(), "Did bloodPresure test!");
+                __WEBPACK_IMPORTED_MODULE_2__Logger__["a" /* logger */].logg(Date.now(), "Did bloodPresure test!");
                 return labCheck.bloodPresure();
             } else if (typeOfCheck === "SIP") {
-                this.loging = new __WEBPACK_IMPORTED_MODULE_2__Logger__["a" /* Logger */]();
-                this.loging.logg(Date.now(), "Did suggarInBlood test!");
+                __WEBPACK_IMPORTED_MODULE_2__Logger__["a" /* logger */].logg(Date.now(), "Did suggarInBlood test!");
                 return labCheck.sugarInBlood("15:15");
             } else if (typeOfCheck === "CIP") {
-                this.loging = new __WEBPACK_IMPORTED_MODULE_2__Logger__["a" /* Logger */]();
-                this.loging.logg(Date.now(), "Did cholesterolInBLood test!");
+                __WEBPACK_IMPORTED_MODULE_2__Logger__["a" /* logger */].logg(Date.now(), "Did cholesterolInBLood test!");
                 return labCheck.cholesterolInBlood();
             } else {
                 return "We can't do that check!";
@@ -130,8 +127,8 @@ var Doctor = function (_PersonAbstract) {
     }, {
         key: "log",
         value: function log() {
-            this.loging = new __WEBPACK_IMPORTED_MODULE_2__Logger__["a" /* Logger */]();
-            this.loging.logg(Date.now(), this.getFullName());
+            // this.loging = new Logger();
+            __WEBPACK_IMPORTED_MODULE_2__Logger__["a" /* logger */].logg(Date.now(), this.getFullName());
         }
     }, {
         key: "sing",
@@ -307,8 +304,7 @@ var Pacijent = function (_PersonAbstract) {
         value: function selectDoctor(doctor) {
             if (doctor instanceof __WEBPACK_IMPORTED_MODULE_1__Doctor__["a" /* Doctor */]) {
                 this.doctor = doctor;
-                this.loging = new __WEBPACK_IMPORTED_MODULE_2__Logger__["a" /* Logger */]();
-                this.loging.logg(Date.now(), "Picked: " + this.doctor.getFullName());
+                __WEBPACK_IMPORTED_MODULE_2__Logger__["a" /* logger */].logg(Date.now(), "Picked: " + this.doctor.getFullName());
                 return "Success! You've got yourself a doctor!!";
             } else {
                 return "Failed!! That's not a doctor!!";
@@ -322,8 +318,7 @@ var Pacijent = function (_PersonAbstract) {
     }, {
         key: 'log',
         value: function log() {
-            this.loging = new __WEBPACK_IMPORTED_MODULE_2__Logger__["a" /* Logger */]();
-            this.loging.logg(Date.now(), this.getFullName());
+            __WEBPACK_IMPORTED_MODULE_2__Logger__["a" /* logger */].logg(Date.now(), this.getFullName());
         }
     }]);
 
@@ -350,7 +345,7 @@ console.log(doctor.scheduleLabCheck(pacient2, "BP"));
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Logger; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return logger; });
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -376,6 +371,8 @@ var Logger = function () {
 
     return Logger;
 }();
+
+var logger = new Logger();
 
 /***/ })
 

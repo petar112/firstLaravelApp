@@ -1,4 +1,4 @@
-export class Logger{
+class Logger{
     constructor() {
         if(!Logger.Instance){
 
@@ -13,3 +13,5 @@ export class Logger{
         console.log("Time: " + curDate + " - " + item);
     }
 }
+
+export const logger = new Logger();
