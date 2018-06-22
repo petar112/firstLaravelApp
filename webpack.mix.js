@@ -19,3 +19,5 @@ mix.js('resources/assets/js/app1.js', 'public/js/all.js');
 mix.js('resources/assets/js/app1HelpJs.js', 'public/js/allHelp.js');
 
 mix.js('resources/assets/js/JsonPractice.js', 'public/js');
+
+mix.js('resources/assets/js/Vezba18Loader.js', 'public/js');

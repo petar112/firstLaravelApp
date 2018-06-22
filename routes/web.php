@@ -31,6 +31,10 @@ Route::group(['middleware' => 'auth'], function () {
         return View('JSTest');
     });
 
+    Route::get('/jsVezba18', function (){
+        return view('Vezba18HtmlFile');
+    });
+
 
     Route::get('/home', 'HomeController@Dance');
     Route::get('/delete', 'UsersController@Delete');
