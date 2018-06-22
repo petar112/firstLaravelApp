@@ -10,7 +10,7 @@ export class Pacijent extends PersonAbstract{
         this.JMBG = JMBG;
         this.healthCardNumb = healthCardNumb;
         this.doctor = "";
-        this.log();
+        logger.logg(Date.now(), this.getFullName());
     }
 
     getFullName(){
@@ -30,10 +30,6 @@ export class Pacijent extends PersonAbstract{
     sing(){
         return "Singing the loudest!"
     }
-
-    log(){
-        logger.logg(Date.now(), this.getFullName());
-    }
 }
 
 
@@ -43,7 +39,6 @@ export class Pacijent extends PersonAbstract{
 let pacient1 = new Pacijent("Marko", "Markovic", "123351231351134", "1233512", doctor);
 let pacient2 = new Pacijent("Nenad", "Nenadovic", "135914813491352", "1344821", doctor);
 let pacient3 = new Pacijent("Milos", "Milosevic", "123541233123567", "5676767", doctor);
-console.log("PRavimo doktora");
 let doctor = new Doctor("Petar", "Nikolic", "Ginekolog", [pacient1, pacient3]);
 console.log(pacient1.selectDoctor(doctor));
 console.log(pacient2.selectDoctor(pacient1));

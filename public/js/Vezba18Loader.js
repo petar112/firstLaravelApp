@@ -98,7 +98,7 @@ var Doctor = function (_PersonAbstract) {
 
         _this.speciality = speciality;
         _this.pacients = pacients;
-        _this.log();
+        __WEBPACK_IMPORTED_MODULE_2__Logger__["a" /* logger */].logg(Date.now(), _this.getFullName());
         return _this;
     }
 
@@ -123,12 +123,6 @@ var Doctor = function (_PersonAbstract) {
             } else {
                 return "We can't do that check!";
             }
-        }
-    }, {
-        key: "log",
-        value: function log() {
-            // this.loging = new Logger();
-            __WEBPACK_IMPORTED_MODULE_2__Logger__["a" /* logger */].logg(Date.now(), this.getFullName());
         }
     }, {
         key: "sing",
@@ -252,9 +246,9 @@ var LabCheck = function () {
     return LabCheck;
 }();
 
-var lab = new LabCheck("asd0", "asd", "pac");
+var lab = new LabCheck("15.03.2018", "12:15", "Petar");
 console.log(lab.checkDate);
-var lab1 = new LabCheck("asd1", "asd", "pac");
+var lab1 = new LabCheck("17.07.2019", "13:25", "Nikola");
 console.log(lab1.checkDate);
 
 /***/ }),
@@ -290,7 +284,7 @@ var Pacijent = function (_PersonAbstract) {
         _this.JMBG = JMBG;
         _this.healthCardNumb = healthCardNumb;
         _this.doctor = "";
-        _this.log();
+        __WEBPACK_IMPORTED_MODULE_2__Logger__["a" /* logger */].logg(Date.now(), _this.getFullName());
         return _this;
     }
 
@@ -315,11 +309,6 @@ var Pacijent = function (_PersonAbstract) {
         value: function sing() {
             return "Singing the loudest!";
         }
-    }, {
-        key: 'log',
-        value: function log() {
-            __WEBPACK_IMPORTED_MODULE_2__Logger__["a" /* logger */].logg(Date.now(), this.getFullName());
-        }
     }]);
 
     return Pacijent;
@@ -328,7 +317,6 @@ var Pacijent = function (_PersonAbstract) {
 var pacient1 = new Pacijent("Marko", "Markovic", "123351231351134", "1233512", doctor);
 var pacient2 = new Pacijent("Nenad", "Nenadovic", "135914813491352", "1344821", doctor);
 var pacient3 = new Pacijent("Milos", "Milosevic", "123541233123567", "5676767", doctor);
-console.log("PRavimo doktora");
 var doctor = new __WEBPACK_IMPORTED_MODULE_1__Doctor__["a" /* Doctor */]("Petar", "Nikolic", "Ginekolog", [pacient1, pacient3]);
 console.log(pacient1.selectDoctor(doctor));
 console.log(pacient2.selectDoctor(pacient1));

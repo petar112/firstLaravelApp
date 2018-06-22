@@ -11,7 +11,7 @@ export class Doctor extends PersonAbstract{
         super(firstName, lastName);
         this.speciality = speciality;
         this.pacients = pacients;
-        this.log();
+        logger.logg(Date.now(), this.getFullName());
     }
 
     getFullName(){
@@ -33,12 +33,6 @@ export class Doctor extends PersonAbstract{
             return "We can't do that check!";
         }
     }
-
-        log(){
-            // this.loging = new Logger();
-            logger.logg(Date.now(), this.getFullName());
-        }
-
     sing() {
         return "Singing loud!!";
     }

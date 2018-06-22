@@ -37,7 +37,7 @@ export class LabCheck{
     }
 }
 
-let lab = new LabCheck("asd0", "asd", "pac");
+let lab = new LabCheck("15.03.2018", "12:15", "Petar");
 console.log(lab.checkDate);
-let lab1 = new LabCheck("asd1", "asd", "pac");
+let lab1 = new LabCheck("17.07.2019", "13:25", "Nikola");
 console.log(lab1.checkDate);
